@@ -1,0 +1,44 @@
+.modal {
+    overflow-y: auto !important;
+}
+
+.ui-front {
+    z-index: 1500 !important;
+}
+
+html {
+    background-size: cover;
+    word-wrap: break-word;
+}
+
+body {
+    font-family: montserrat, sans-serif;
+    background-color: #d5d6d8;
+    color: #000;
+    word-wrap: break-word;
+}
+
+.image-blurred-edge {
+    box-shadow: 0 0 8px 8px #fff inset;
+    border-radius: 10px;
+}
+
+.theme {
+    background: linear-gradient(90deg, rgb(254,211,43), rgb(187,157,44));
+}
+
+.control-panel-item {
+    text-align: center;
+    margin-right: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.alert-theme {
+    background-color: #6c63ff;
+    color: #fff;
+}
+
+.color-theme {
+    color: rgb(254,211,43);
+}
