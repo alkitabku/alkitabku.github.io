@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Verse from "../components/Verse";
+import ReactDOM from 'react-dom';
 
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
@@ -23,19 +25,22 @@ export default function ChapterContainer(props) {
         if (!rawVerses) {
             return;
         }
+        let elements = [];
         for (let i = 0; i < rawVerses.length; i++) {
             if ('title' in rawVerses[i]) {
-                let verseTitleDiv = document.createElement('div');
-                verseTitleDiv.innerHTML = `<b>${rawVerses[i]['title']}</b>`;
-                verseTitleDiv.id = `verse${rawVerses[i]['number']}`;
-                container.appendChild(verseTitleDiv);
+                let verseTitle = (
+                    <Verse id={`verse${rawVerses[i]['number']}`} text={rawVerses[i]['title']} bold={ true }/>
+                );
+                elements.push(verseTitle);
             }
-            let verseDiv = document.createElement('div');
-            verseDiv.innerHTML = rawVerses[i]['text'];
-            verseDiv.id = `verse${rawVerses[i]['number']}`;
-            container.appendChild(verseDiv);
+            let verseText = (
+                <Verse id={`verse${rawVerses[i]['number']}`} text={rawVerses[i]['text']} />
+            );
+            elements.push(verseText);
         }
-    }
+        const root = ReactDOM.createRoot(container);
+        root.render(<>{elements}</>);
+    };
 
     return (
         <div className="card">
