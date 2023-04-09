@@ -29,7 +29,7 @@ export default function ChapterContainer(props) {
         for (let i = 0; i < rawVerses.length; i++) {
             if ('title' in rawVerses[i]) {
                 let verseTitle = (
-                    <Verse id={`verse${rawVerses[i]['number']}`} text={rawVerses[i]['title']} bold={ true }/>
+                    <Verse id={`verse${rawVerses[i]['number']}`} text={rawVerses[i]['title']} bold={ true } highlighted={ true }/>
                 );
                 elements.push(verseTitle);
             }

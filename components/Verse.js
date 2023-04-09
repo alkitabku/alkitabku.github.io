@@ -1,5 +1,5 @@
 export default function Verse(props) {
-    const classes = `${props.highlighted ? 'bg-dark' : ''} ${props.bold ? 'fw-bold' : ''} mb-3`;
+    const classes = `${props.highlighted ? 'bg-warning p-2' : ''} ${props.bold ? 'fw-bold' : ''} mb-3`;
   
     return (
         <div className={classes}>
