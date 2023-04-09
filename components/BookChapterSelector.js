@@ -5,6 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function BookChapterSelector(props) {
     const [data, setData] = useState(null);
+    const [bookState, setBookState] = useState(["Kejadian"]);
 
     useEffect( () => {
         const fetchBooksAndChapters = async () => {
@@ -45,6 +46,7 @@ export default function BookChapterSelector(props) {
     const handleBookInput = (bookName) => {
         clearChapterSelect();
         populateChapterOptions(bookName);
+        setBookState(bookName);
     }
     
     const clearChapterSelect = () => {
@@ -64,7 +66,13 @@ export default function BookChapterSelector(props) {
                 </select>
                 <br/>
                 <div style={{textAlign: "center"}}>
-                    <button className="btn theme">
+                    <button className="btn theme" onClick={ 
+                        () => {
+                            let bookName = data[bookState[0]]['abbreviation'].toLowerCase();
+                            let chapterNumber = document.getElementById('chapter_input').value;
+                            props.onSelect(bookName, chapterNumber);
+                        }
+                     }>
                         <i className="bi bi-search"></i>
                         &nbsp;
                         Baca
