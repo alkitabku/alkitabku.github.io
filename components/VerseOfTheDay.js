@@ -21,13 +21,13 @@ export default function VerseOfTheDay(props) {
             var data = await fetch("https://raw.githubusercontent.com/fbunaren/Alkitab-Static-API/main/v1/books.json");
             var data = await data.json();
             const date = getYearMonthDay();
-            const bookId = date % data.length;
+            const bookId = (date % data.length) + 1;
             const bookAbbreviation = data[bookId]['abbreviation'].toLowerCase();
-            const chapterNumber = date % data[bookId]['chapter_count'];
+            const chapterNumber = (date % data[bookId]['chapter_count']) + 1;
 
             var data = await fetch(`https://raw.githubusercontent.com/fbunaren/Alkitab-Static-API/main/v1/${bookAbbreviation}/${chapterNumber}.json`);
             data = await data.json();
-            const verseNumber = date % data['verses'].length;
+            const verseNumber = (date % data['verses'].length) + 1;
             const verseText = data['verses'][verseNumber]['text'];
 
             setData({"book_code": bookAbbreviation, 
