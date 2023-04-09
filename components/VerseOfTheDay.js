@@ -40,15 +40,15 @@ export default function VerseOfTheDay(props) {
     }, []);
 
     return (
-        <div className='card'>
-            <div className='card-header theme'>
+        <details className='card'>
+            <summary className='card-header theme'>
                 Ayat Hari ini
-            </div>
+            </summary>
             <div className="card-body">
                 <b>{ data && `${capitalize(data['book_code'])} ${data['chapter']}:${data['verse_number']}` }</b>
                 <br/>
                 { data && data['text']}
             </div>
-        </div>
+        </details>
     );
 }
