@@ -16,7 +16,7 @@ export default function ChapterContainer(props) {
         }
 
         fetchChapter(props.book, props.chapter);
-    }, [])
+    }, [props.book, props.chapter])
 
     const populateVerses = (rawVerses) => {
         let container = document.getElementById('verse_container');
@@ -42,7 +42,7 @@ export default function ChapterContainer(props) {
             <div className="card-header theme">
                 { data &&  `${capitalize(data['bookname'])} ${data['chapter']}` }
             </div>
-            <div id="verse_container" class="card-body p-3 shadow rounded">
+            <div id="verse_container" className="card-body p-3 shadow rounded">
                 { data && populateVerses(data['verses']) }
             </div>
         </div>

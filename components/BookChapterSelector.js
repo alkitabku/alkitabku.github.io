@@ -63,7 +63,7 @@ export default function BookChapterSelector(props) {
                 <select id="chapter_input" className="form-control">
                 </select>
                 <br/>
-                <div style={{"text-align": "center"}}>
+                <div style={{textAlign: "center"}}>
                     <button className="btn theme">
                         <i className="bi bi-search"></i>
                         &nbsp;

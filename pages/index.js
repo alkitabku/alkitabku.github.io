@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Header title="Alkitab Online"></Header>
       
-      <div className='row' style={{"max-width" : "100%"}}>
+      <div className='row' style={{maxWidth : "100%"}}>
         <div className='m-3 col-sm-3'>
           <VerseOfTheDay/>
         </div>
