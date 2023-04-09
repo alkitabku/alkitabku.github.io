@@ -34,7 +34,7 @@ export default function ChapterContainer(props) {
                 elements.push(verseTitle);
             }
             let verseText = (
-                <Verse id={`verse${rawVerses[i]['number']}`} text={rawVerses[i]['text']} />
+                <Verse id={`verse${rawVerses[i]['number']}`} text={rawVerses[i]['text']} number={ rawVerses[i]['number']}/>
             );
             elements.push(verseText);
         }
